@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
-from scipy.optimize import brentq
 
 # Função que retorna as derivadas de um vetor de estado usando as equações diferencias do CRTBP
 def f(t, estado, mu):
