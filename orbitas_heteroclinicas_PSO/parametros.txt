@@ -1,0 +1,13 @@
+PROGRAMA DAS ÓRBITAS HETEROCLÍNICAS:
+Plota as órbitas heteroclínicas do PRTCC para um dado sistema
+Baseado no modelo de Gómez et al., 1988
+    mu: parâmetro de massa 
+    n_amostras: número de pontos no anel de condições inicias (deve ser um valor inteiro).
+    r: raio do anel de condições inicias
+
+OBS: o valor do parâmetro de massa não pode ser menor do que o limite de Ruth, pois o programa pode dar erro devido a valores imaginários
+
+PARÂMETROS:
+mu = 0.465086
+n_amostras = 100
+r = 1e-4

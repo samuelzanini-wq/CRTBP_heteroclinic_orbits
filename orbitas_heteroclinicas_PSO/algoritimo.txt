@@ -1,0 +1,26 @@
+plotar a seção de poicare com poucos pontos
+
+verificar se houve cruzamentos em vx (vx_i * vx_i+1 < 0) para todos os intervalos
+
+definir intervalo de thetas (theta_i, theta_i+1)
+
+rodar o PSO para esse intervalo
+-> teremos a órbita heteroclínica
+
+
+
+
+       # Exclui cruzamentos muito próximos às posições das massas primárias
+        # Defini 0.03 como muito próximo porque sim
+        perto_massa1 = (abs(x1 - x_m1) < 0.03) or (abs(x2 - x_m1) < 0.03)
+        perto_massa2 = (abs(x1 - x_m2) < 0.03) or (abs(x2 - x_m2) < 0.03)
+        if perto_massa1 or perto_massa2:
+            continue
+
+        # Exclui tangências/raspagens no eixo x (vy ~ 0)
+        if abs(vy1) < 0.05 or abs(vy2) < 0.05:
+            continue
+
+        # Verifica troca de sinal contínua em vx (descartando saltos bruscos de singularidade)
+        if (vx1 * vx2 <= 0) and abs(vx2 - vx1) < 1.5:
+            indices.append(j)
